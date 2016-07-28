@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>K_Spases | 使用Pelican搭建个人blog-1</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/base.css" />
+        <meta name="author" value="Jeff Luke" />
+        <meta name="description" value="WITF 一直以来都希望有自己的个人博客，随性发点信息，记录自己的生活，写点技术感想，不积跬步无以至千里，不再纸上谈兵，从现在开始。 Knowledge 本博客是在mac下搭建完成。搭建博客的工具选用了基于python的pelican，相比wordpress等其它工具来说，它比较轻盈并有很多令人兴奋的特性，再配合免费无限制的github pages，近乎完美。搭建过程中涉及如下技术知识，不过你不必害怕，只是使用它们的开源框架而已，并不需要自己编码，点击可以了解它们是如何的强大，当然你也可以略过它们，后面遇到时再进行了解。 需要的工具 * gitbub * python * pelican * markdown 安装 pip install pelican markdown 生成Site 在你的电脑上，建立一个目录，作为博客的主目录。我们假定，它的名称为blog。 mkdir blog cd blog pelican-quickstart 运行一下命令后，就生成了一个站点，包含以下目录： blog/ ├── content # 存放输入的源文件 ..." />
+        <meta name="keywords" value="pelican,publishing" />
+    </head>
+    <body>
+        <header class="site highlight">
+                <h1 class="stamp lrot"></h1>
+        </header>
+        <div class="site clearfix">
+<nav class="lfloat">
+    <ul class="links">
+    <li class="active">
+        <a  href="/category/python.html">Python</a>
+    </li>
+    </ul>
+    <ul class="social rfloat">
+        <li><a title="You can add links in your config file" href="#"></a></li>
+        <li><a title="Another social link" href="#"></a></li>
+    </ul>
+</nav>            <section class="content">
+                <h1 class="stamp">使用Pelican搭建个人blog-1</h1>
+                <div class="body">
+<article>
+    <footer>
+        <ul class="socialbtn">
+            <li></li>
+            <li></li>
+        </ul>
+        四 28 七月 2016
+        <address>
+            <a href="/author/jeff-luke.html">Jeff Luke</a>
+        </address>
+
+<ul class="tags"><lh>tags:</lh><li><a href="/tag/pelican.html">pelican</a></li><li><a href="/tag/publishing.html">publishing</a></li></ul>    </footer>
+
+    <div class="content">
+        <h2>WITF</h2>
+<p>一直以来都希望有自己的个人博客，随性发点信息，记录自己的生活，写点技术感想，不积跬步无以至千里，不再纸上谈兵，从现在开始。</p>
+<h3>Knowledge</h3>
+<p>本博客是在mac下搭建完成。搭建博客的工具选用了基于python的pelican，相比wordpress等其它工具来说，它比较轻盈并有很多令人兴奋的特性，再配合免费无限制的github pages，近乎完美。搭建过程中涉及如下技术知识，不过你不必害怕，只是使用它们的开源框架而已，并不需要自己编码，点击可以了解它们是如何的强大，当然你也可以略过它们，后面遇到时再进行了解。</p>
+<div class="highlight"><pre><span></span>需要的工具
+* gitbub
+* python
+* pelican
+* markdown
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>安装
+pip install pelican markdown 
+</pre></div>
+
+
+<h3>生成Site</h3>
+<p>在你的电脑上，建立一个目录，作为博客的主目录。我们假定，它的名称为blog。</p>
+<div class="highlight"><pre><span></span>mkdir blog
+cd blog
+pelican-quickstart
+</pre></div>
+
+
+<p>运行一下命令后，就生成了一个站点，包含以下目录：</p>
+<div class="highlight"><pre><span></span>blog/
+├── content              # 存放输入的源文件
+│   └── (pages)          # 存放手工创建的静态页面
+├── output               # 生成的输出文件
+├── develop_server.sh    # 方便开启测试服务器
+├── Makefile             # 方便管理博客的Makefile
+├── pelicanconf.py       # 主配置文件
+└── publishconf.py       # 主发布文件，可删除
+</pre></div>
+
+
+<p>另外，生成的过程中需要配置一些东西，大部分都可以一路回车，选择默认设置，其中有一步需要你填写自己的网站域名，如果暂时没有，可以先随便设置，之后可以在pelicanconf.py文件中进行修改。</p>
+<h4>创建File</h4>
+<p>接下来，就可以使用你喜欢的任何编辑器用markdown语法写你的第一篇文章。需要在每篇文章的开头填入以下关于文章的元信息：</p>
+<div class="highlight"><pre><span></span>Title: 文章标题
+Date: 创建日期
+Modified: 修改日期
+Category: 文章分类，标志本文处于该分类下
+Tags: 文章标签，标志本文处于该标签下
+Slug: URL中该文章的链接地址
+Author: 作者
+</pre></div>
+
+
+<p>把以上的文件保存在content目录下，如保存为./content/test.md</p>
+<h4>生成Html</h4>
+<p>返回博客的主目录（即包含pelican文件的目录），然后在命令行中运行：</p>
+<div class="highlight"><pre><span></span>make html
+</pre></div>
+
+
+<p>启用预览站点http://localhost:8000/ </p>
+<div class="highlight"><pre><span></span>make serve
+</pre></div>
+
+
+<h2>部署到Gitbub</h2>
+<p>Github就提供了Pages功能，允许用户自定义项目首页，用来替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。于是，我们就可以将生成的静态网页部署在Github Pages上。</p>
+<h5>建立一个repository</h5>
+<p>登陆自己的Github主页，创建一个名字为：username.github.io 的repository。 其中必须修改username为自己账号的username，如：nurnoch.github.io</p>
+<h5>将生成的静态网站上传到repository</h5>
+<p>进入到output目录下，运行：</p>
+<div class="highlight"><pre><span></span>git init
+git remote add origin https://github.com/username/username.github.com.git
+</pre></div>
+
+
+<p>将username替换为自己的github用户名，初始化，并添加远程repository，将会生成 .git的目录，然后我们将output目录下的所有文件上传到github：</p>
+<div class="highlight"><pre><span></span>git add .
+git commit -m &quot;update&quot;
+git push origin master
+</pre></div>
+
+
+<h2>配置Peilican</h2>
+<p>通过修改在博客根目录下的pelicanconf.py文件，可以对Pelican进行配置.</p>
+<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s1">&#39;Alexis Métaireau&#39;</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s2">&quot;Alexis&#39; log&quot;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;http://blog.notmyidea.org&#39;</span>
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s2">&quot;Europe/Paris&quot;</span>
+
+<span class="c1"># can be useful in development, but set to False when you&#39;re ready to publish</span>
+<span class="n">RELATIVE_URLS</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s1">&#39;http://github.com/ametaireau/&#39;</span>
+<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s2">&quot;blog-notmyidea&quot;</span>
+<span class="n">PDF_GENERATOR</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">REVERSE_CATEGORY_ORDER</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">LOCALE</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">DEFAULT_DATE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">FEED_ALL_RSS</span> <span class="o">=</span> <span class="s1">&#39;feeds/all.rss.xml&#39;</span>
+<span class="n">CATEGORY_FEED_RSS</span> <span class="o">=</span> <span class="s1">&#39;feeds/</span><span class="si">%s</span><span class="s1">.rss.xml&#39;</span>
+
+<span class="n">LINKS</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;Biologeek&#39;</span><span class="p">,</span> <span class="s1">&#39;http://biologeek.org&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Filyb&#39;</span><span class="p">,</span> <span class="s2">&quot;http://filyb.info/&quot;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Libert-fr&#39;</span><span class="p">,</span> <span class="s2">&quot;http://www.libert-fr.com&quot;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;N1k0&#39;</span><span class="p">,</span> <span class="s2">&quot;http://prendreuncafe.com/blog/&quot;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Tarek Ziadé&#39;</span><span class="p">,</span> <span class="s2">&quot;http://ziade.org/blog&quot;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s1">&#39;Zubin Mithra&#39;</span><span class="p">,</span> <span class="s2">&quot;http://zubin71.wordpress.com/&quot;</span><span class="p">),)</span>
+
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;twitter&#39;</span><span class="p">,</span> <span class="s1">&#39;http://twitter.com/ametaireau&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;lastfm&#39;</span><span class="p">,</span> <span class="s1">&#39;http://lastfm.com/user/akounet&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;github&#39;</span><span class="p">,</span> <span class="s1">&#39;http://github.com/ametaireau&#39;</span><span class="p">),)</span>
+
+<span class="c1"># global metadata to all the contents</span>
+<span class="n">DEFAULT_METADATA</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;yeah&#39;</span><span class="p">,</span> <span class="s1">&#39;it is&#39;</span><span class="p">),)</span>
+
+<span class="c1"># path-specific metadata</span>
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extra/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;robots.txt&#39;</span><span class="p">},</span>
+    <span class="p">}</span>
+
+<span class="c1"># static paths will be copied without parsing their contents</span>
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;pictures&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;extra/robots.txt&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+<span class="c1"># custom page generated with a jinja2 template</span>
+<span class="n">TEMPLATE_PAGES</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pages/jinja2_template.html&#39;</span><span class="p">:</span> <span class="s1">&#39;jinja2_template.html&#39;</span><span class="p">}</span>
+
+<span class="c1"># code blocks with line numbers</span>
+<span class="n">PYGMENTS_RST_OPTIONS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;linenos&#39;</span><span class="p">:</span> <span class="s1">&#39;table&#39;</span><span class="p">}</span>
+
+<span class="c1"># foobar will not be used, because it&#39;s not in caps. All configuration keys</span>
+<span class="c1"># have to be in caps</span>
+<span class="n">foobar</span> <span class="o">=</span> <span class="s2">&quot;barbaz&quot;</span>
+</pre></div>
+    </div><!-- /.entry-content -->
+
+
+</article>
+                </div>
+            </section>
+ <footer class="site clearfix bs">
+    <section class="lfloat">
+        <ul>
+            <lh>categories</lh>
+            <li><a href="/category/python.html">Python</a></li>
+        </ul>
+    </section>
+    <section class="lfloat">
+        <ul>
+            <lh>pages</lh>
+        </ul>
+    </section>
+    <section class="rfloat">
+    <small>
+        <p>site generated by <a href="https://github.com/getpelican/pelican">pelican</a></p>
+        <p>theme by <a href="https://github.com/demianbrecht">demian brecht</a></p>
+    </small>
+    </section>
+</footer>        </div>
+    </body>
+</html>
