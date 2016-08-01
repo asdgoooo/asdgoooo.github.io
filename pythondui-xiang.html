@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>K_Spases | Grammar</title>
+        <title>K_Spases | Python对象</title>
         <meta charset="utf-8" />
         <meta http-equiv="cache-control" content="no-cache" />
         <link rel="stylesheet" type="text/css" href="/theme/css/base.css" />
         <meta name="author" value="Jeff Luke" />
-        <meta name="description" value="Blog posts related to grammar" />
-        <meta name="keywords" value="grammar" />
+        <meta name="description" value="对象 Python 使用对象模型来存储数据。构造任何类型的值都是一个对象。 所有的Python对象都有三个特性：身份，类型和值。 身份： 每一个对象都有一个唯一的身份标示自己，任何对象的身份可以使用内建函数id()来得到。这个值可以被认为是该对象的内存地址。 类型： 对象的类型决定了对象可以保存什么类型的值，可以进行什么样的操作，以及遵循什么样的规则。 值： 对象表示的数据项 类就是类型，实例是对应类型的对象 数字 数字提供了标量贮存和直接访问。它是不可变类型，也就是说变更数字的值会生成新的对象。 Python支持多种数字类型：整型、长整型、布尔型、双精度浮点型和复数。 地板除（floor），取比商小的最大整数。 数值运算内建函数: 函数 功能 abs(num) 返回num的绝对值 coerce(num1,num2) 将num1和num2转换为同一类型，然后以一个元组形势返回 divmod(num1,num2) 除法－取余运算的结合。返回一个元组（num1 ..." />
+        <meta name="keywords" value="Python,grammar" />
     </head>
     <body>
         <header class="site highlight">
@@ -16,8 +16,8 @@
         <div class="site clearfix">
 <nav class="lfloat">
     <ul class="links">
-    <li>
-        <a class="stamp" href="/category/python.html">Python</a>
+    <li class="active">
+        <a  href="/category/python.html">Python</a>
     </li>
     </ul>
     <ul class="social rfloat">
@@ -25,19 +25,23 @@
         <li><a title="Another social link" href="#"></a></li>
     </ul>
 </nav>            <section class="content">
-                <h1 class="stamp">        grammar
-</h1>
+                <h1 class="stamp">Python对象</h1>
                 <div class="body">
-<ol class="article-list">
-    <li>
-        <article>
-            <header>
-                <h2><a href="/pythondui-xiang.html">Python对象</a></h2>
-            </header>
-            <footer>
-                一 01 八月 2016 | <a href="/pythondui-xiang.html#disqus_thread"</a>comments</a>
-            </footer>
-            <div class="content"><h2>对象</h2>
+<article>
+    <footer>
+        <ul class="socialbtn">
+            <li></li>
+            <li></li>
+        </ul>
+        一 01 八月 2016
+        <address>
+            <a href="/author/jeff-luke.html">Jeff Luke</a>
+        </address>
+
+<ul class="tags"><lh>tags:</lh><li><a href="/tag/python.html">Python</a></li><li><a href="/tag/grammar.html">grammar</a></li></ul>    </footer>
+
+    <div class="content">
+        <h2>对象</h2>
 <p>Python 使用对象模型来存储数据。构造任何类型的值都是一个对象。</p>
 <blockquote>
 <p>所有的Python对象都有三个特性：身份，类型和值。</p>
@@ -86,41 +90,24 @@
 </tr>
 <tr>
 <td>divmod(num1,num2)</td>
-<td>除法－取余运算的结合。返回一个元组（num1 ...</td></tr></tbody></table></div>
-        </article>
-    </li>
-    <li>
-        <article>
-            <header>
-                <h2><a href="/grammar.html">Python 语法注意要点</a></h2>
-            </header>
-            <footer>
-                一 01 八月 2016 | <a href="/grammar.html#disqus_thread"</a>comments</a>
-            </footer>
-            <div class="content"><h1>The main point</h1>
-<h3>属性Attribute</h3>
-<p>属性是与数据有关的项目，属性可以是简单的数据值，也可以是可执行对象，比如函数和方法。</p>
-<h3>函数Function</h3>
-<p>类似其他的语言，Python中的函数使用小括号()调用。函数在调用之前必须定义。如果函数中没有return语句，会自动返回None对象。</p>
-<ul>
-<li>Python是通过引用调用的。这意味着函数内对参数的改变会影响到原始对   象。不过事实上只有 可变对象 会受此影响，对于 不可变对象 来说，它的行为类似按值调用。</li>
-</ul>
-<h3>类Type</h3>
-<div class="highlight"><pre><span></span>当一个类实例被创建时，__init__()方法会自动执行，在类实例创建完毕后执行，类似构建函数。__init__()可以被当成构建函数，不过不像其他语言中的构建函数，它并不创建实例--它仅仅是你的对象创建后执行的第一个方法。它的目的是执行一些对象的必要的初始化工作。
-</pre></div>
+<td>除法－取余运算的结合。返回一个元组（num1/num2,num1%num2）。对浮点数和复数的商进行下舍入（复数仅取实数部分的商）</td>
+</tr>
+<tr>
+<td>pow(num1,num2, mod=1)</td>
+<td>取num1的num2次方，如果提供mod参数，则计算结果再对mod进行取余运算。</td>
+</tr>
+<tr>
+<td>round(flt, ndig=0)</td>
+<td>接受一个浮点数flt并对其四舍五入，保存ndig位小数。若不提供ndig参数，则默认小数点后0位。</td>
+</tr>
+</tbody>
+</table>
+<h4>布尔值</h4>
+<p><strong>所有标准对象均可用于布尔测试，同类型的对象之间可以比较大小。每个对象天生具有布尔True或False值。空对象、值为零的任何数字或者Null对象的布尔值都是False</strong></p>
+    </div><!-- /.entry-content -->
 
 
-<ul>
-<li>通过创建自己的__init__() 方法，你可以覆盖默认的__init__()<em>（默认的方法什么也不做）</em>，从而能够修饰刚刚创建的对象。</li>
-</ul>
-<h3>对象Object</h3>
-<p>在Python中，对象是通过引用传递的。在赋值时，不管这个对象是新创建的，还是一个已经存在的，都是将该对象的引用（并不是值）赋值给变量 ...</p></div>
-        </article>
-    </li>
-</ol>
-<p class="paginator">
-    Page 1 / 1
-</p>
+</article>
                 </div>
             </section>
  <footer class="site clearfix bs">
